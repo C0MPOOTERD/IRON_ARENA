@@ -1,0 +1,13 @@
+{
+  "name": "iron-arena",
+  "version": "1.0.0",
+  "description": "Iron Arena: online tank battle royale with accounts and matchmaking",
+  "main": "server.js",
+  "scripts": {
+    "patch": "node patch/apply.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

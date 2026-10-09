@@ -1,0 +1,60 @@
+<!-- Auth Modal -->
+        <div id="modal-auth" class="absolute inset-0 flex flex-col items-center justify-center panel-glass bg-slate-950/95 z-40 hidden p-4">
+            <div class="max-w-sm w-full panel-glass p-5 rounded-2xl space-y-3 border-cyan-500/30 relative" style="user-select:text">
+                <button id="btn-auth-close" class="absolute top-3 right-3 text-slate-400 hover:text-white text-base font-bold cursor-pointer">✕</button>
+                <h3 id="auth-title" class="text-xl font-black text-cyan-400">CREATE ACCOUNT</h3>
+                <input id="auth-username" maxlength="16" autocomplete="username" placeholder="Username" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-sm text-white outline-none focus:border-cyan-400">
+                <input id="auth-password" type="password" maxlength="64" autocomplete="current-password" placeholder="Password (6+ characters)" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-sm text-white outline-none focus:border-cyan-400">
+                <p class="text-[10px] text-slate-500">Usernames: 3-16 letters, numbers or _. Must be unique and appropriate. "BOT" is reserved.</p>
+                <div id="auth-error" class="text-xs text-red-400 min-h-[1rem]"></div>
+                <button id="btn-auth-submit" class="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-black text-sm rounded-xl cursor-pointer">SIGN UP</button>
+            </div>
+        </div>
+
+        <!-- Matchmaking Lobby -->
+        <div id="screen-lobby" class="absolute inset-0 flex items-center justify-center panel-glass bg-slate-950/95 z-30 hidden p-4">
+            <div class="max-w-md w-full panel-glass p-6 rounded-2xl text-center space-y-4 border-cyan-500/30">
+                <div class="text-[10px] text-cyan-400 font-bold tracking-widest">MATCHMAKING</div>
+                <h2 id="lobby-status" class="text-2xl font-black text-white glow-text">CONNECTING...</h2>
+                <div id="lobby-timer" class="text-6xl font-black text-cyan-300">5</div>
+                <div class="text-sm text-slate-300"><span id="lobby-count">1</span> / 25 PLAYERS</div>
+                <p class="text-xs text-slate-400">The battle starts when the timer ends or all 25 slots are filled. Empty slots are filled with BOT tanks, and real players replace bots as they join.</p>
+                <button id="btn-lobby-cancel" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm rounded-xl border border-slate-700 cursor-pointer">CANCEL</button>
+            </div>
+        </div>
+
+        <!-- Game mode picker -->
+        <div id="screen-modes" class="absolute inset-0 flex items-center justify-center panel-glass bg-slate-950/95 z-30 hidden p-4">
+            <div class="max-w-2xl w-full panel-glass p-5 rounded-2xl space-y-3 border-cyan-500/30">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <div class="text-[10px] text-cyan-400 font-bold tracking-widest">SELECT GAME MODE</div>
+                        <h2 class="text-2xl font-black text-white glow-text">PLAY ARENA</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-[9px] text-slate-400 font-semibold">YOUR XP</div>
+                        <div id="modes-credits" class="text-lg font-black text-cyan-300">0</div>
+                    </div>
+                </div>
+                <div id="modes-list" class="space-y-2.5 max-h-[60vh] overflow-y-auto pr-1"></div>
+                <button id="btn-modes-back" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm rounded-xl border border-slate-700 cursor-pointer">BACK</button>
+            </div>
+        </div>
+
+        <!-- Mode scoreboard -->
+        <div id="mode-hud" class="absolute top-16 left-1/2 -translate-x-1/2 z-10 hidden pointer-events-none text-center">
+            <div id="mode-hud-text" class="px-4 py-1.5 rounded-xl bg-slate-950/60 border border-slate-700 text-xs md:text-sm font-black text-slate-100"></div>
+        </div>
+
+        <!-- Match countdown -->
+        <div id="match-countdown" class="absolute inset-0 z-20 hidden flex items-center justify-center pointer-events-none">
+            <div id="match-countdown-text" class="text-7xl md:text-9xl font-black text-cyan-300 glow-text"></div>
+        </div>
+
+        <!-- Spectator bar -->
+        <div id="spectate-bar" class="absolute top-4 left-1/2 -translate-x-1/2 z-20 hidden flex items-center gap-3 px-4 py-2 rounded-xl bg-slate-950/80 border border-red-500/40">
+            <span id="spectate-text" class="text-xs font-bold text-red-400">ELIMINATED - SPECTATING (click to switch view)</span>
+            <button id="btn-spectate-leave" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-lg border border-slate-700 cursor-pointer">LEAVE MATCH</button>
+        </div>
+
+        <!-- Instructions Modal -->
